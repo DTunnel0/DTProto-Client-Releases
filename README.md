@@ -11,7 +11,7 @@ Este guia resume a integração do artefato `dtunnel.aar` a um aplicativo Androi
 
 ## Instalação do artefato
 
-1. Copie `dtunnel.aar` (e opcionalmente `dtunnel-sources.jar`) para `app/libs/`.
+1. Copie `dtunnel.aar` para `app/libs/`.
 2. No `build.gradle.kts` (ou `build.gradle` Groovy) do módulo:
 
 ```kotlin
@@ -149,7 +149,7 @@ class ProtoVpnService : VpnService() {
 
 ## Boas práticas
 
-- Ajuste `username` e `password` com as credenciais reais recebidas do backend.
+- Ajuste `username` e `password` com as credenciais reais.
 - Quando `ip` vier preenchido do handshake, utilize o valor informado em vez do IP padrão.
 - Garanta que apenas uma instância de `LibDTProto` esteja ativa por sessão; finalize sempre com `client.stop()` ao encerrar o serviço.
 - Proteja quaisquer sockets criados pelo app usando `VpnService.protect()` antes de estabelecer conexões.
